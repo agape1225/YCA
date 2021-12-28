@@ -26,9 +26,6 @@
             headers: {
                 Authorization: "KakaoAK 7d1041ba77ea467f493d4283bd6262a9"
             }
-
-
-
         }).done(function(msg){
             console.log(msg["result"]);
         });

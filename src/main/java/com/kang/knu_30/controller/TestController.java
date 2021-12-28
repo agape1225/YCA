@@ -15,7 +15,7 @@ public class TestController {
 
     @RequestMapping("/")
     public ModelAndView index() throws Exception{
-        ModelAndView mav = new ModelAndView("index");
+        ModelAndView mav = new ModelAndView("index_search");
         return mav;
     }
 
