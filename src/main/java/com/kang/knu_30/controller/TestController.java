@@ -1,8 +1,8 @@
 package com.kang.knu_30.controller;
 
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import com.vaadin.external.jsoup.Jsoup;
+import com.vaadin.external.jsoup.nodes.Document;
+import com.vaadin.external.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,7 +15,16 @@ public class TestController {
 
     @RequestMapping("/")
     public ModelAndView index() throws Exception{
-        ModelAndView mav = new ModelAndView("index_search");
+        ModelAndView mav = new ModelAndView("index");
+
+        Document doc = null;
+        doc = Jsoup.connect("https://www.youtube.com/watch?v=pSI4S3iE-5k").get();
+        Elements contents = doc.select(".style-scope yt-formatted-string");
+
+        String html = doc.html();
+
+
+        System.out.println(html);
         return mav;
     }
 
