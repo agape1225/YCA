@@ -28,7 +28,6 @@ public class TestController {
         interpreter = new PythonInterpreter();
 
         interpreter.exec("import sys");
-        interpreter.exec("sys.path.append('C:\\Tools\\Lib\\site-packages\\bs4')");
         interpreter.exec("from bs4 import BeautifulSoup");
         interpreter.exec("import requests");
 
