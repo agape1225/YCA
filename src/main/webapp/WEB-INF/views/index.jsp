@@ -3,20 +3,23 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<script>
-    const https = require('https');
-    const url = encodeURIComponent('https://www.quora.com/search?q=proxycrawl');
-    const options = {
-        hostname: 'api.proxycrawl.com',
-        path: '/?token=JS_TOKEN&scraper=quora-serp&scroll=true&url=' + url,
-    };
-</script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="/asset/js/youtubeAPI.js"></script>
 
 <head>
     <title>View Test Page</title>
 </head>
 <body>
+
+
 main page
+
+
+<input type="text" id="videoId">
+
+<!--<button onclick="loadClient()">load</button>-->
+<button onclick="execute()">execute</button>
+
 </body>
 
 </html>

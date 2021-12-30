@@ -1,5 +1,11 @@
 package com.kang.knu_30.controller;
 
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+
 import com.vaadin.external.jsoup.Jsoup;
 import com.vaadin.external.jsoup.nodes.Document;
 import com.vaadin.external.jsoup.select.Elements;
@@ -11,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,27 +27,14 @@ public class TestController {
 
     private static PythonInterpreter interpreter;
 
+    private static final String DEVELOPER_KEY = "YOUR_API_KEY";
+
+    private static final String APPLICATION_NAME = "API code samples";
+    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+
     @RequestMapping("/")
     public ModelAndView index() throws Exception{
         ModelAndView mav = new ModelAndView("index");
-
-        System.setProperty("python.import.site", "false");
-
-        interpreter = new PythonInterpreter();
-
-        interpreter.exec("import sys");
-        interpreter.exec("from bs4 import BeautifulSoup");
-        interpreter.exec("import requests");
-
-
-        interpreter.execfile("src/main/python/test.py");
-
-
-
-        PyFunction pyFunction = interpreter.get("testFunc", PyFunction.class);
-
-        PyObject pyObject = pyFunction.__call__();
-        System.out.println(pyObject.toString());
 
         return mav;
     }

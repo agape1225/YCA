@@ -1,0 +1,43 @@
+.lecture {
+    width: 100%;
+    padding: 100px 0;
+}
+
+.graduate-card-1 .card .card-img {
+    /*background-image: url("/asset/img/test1.jpg");*/
+    background-image: url("/asset/img/graduate/graduate-1.jpg");
+}
+
+.graduate-card-2 .card .card-img {
+    /*background-image: url("/asset/img/test2.jpg");*/
+    background-image: url("/asset/img/graduate/graduate-2.jpg");
+}
+
+.graduate-card-3 .card .card-img {
+    /*background-image: url("/asset/img/test3.jpg");*/
+    background-image: url("/asset/img/graduate/graduate-3.jpg");
+}
+
+.graduate-card-4 .card .card-img {
+    /*background-image: url("/asset/img/test1.jpg");*/
+    background-image: url("/asset/img/graduate/graduate-4.jpg");
+}
+
+.graduate-card-5 .card .card-img {
+    /*background-image: url("/asset/img/test2.jpg");*/
+    background-image: url("/asset/img/graduate/graduate-5.jpg");
+}
+
+.graduate-card-6 .card .card-img {
+    /*background-image: url("/asset/img/test3.jpg");*/
+    background-image: url("/asset/img/graduate/graduate-6.jpg");
+}
+
+.graduate-card-7 .card .card-img {
+    /*background-image: url("/asset/img/test3.jpg");*/
+    background-image: url("/asset/img/graduate/graduate-7.jpg");
+}
+
+.graduate-card .card-description {
+    opacity: 1 !important;
+}

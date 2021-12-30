@@ -1,0 +1,910 @@
+* {
+    letter-spacing: -0.0417em;
+}
+
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.detail-content{
+    white-space: break-spaces;
+}
+
+.celebration-card::-webkit-scrollbar {
+    width: 5px; /*스크롤바의 너비*/
+}
+
+.celebration-card::-webkit-scrollbar-thumb {
+    background-color: #727272; /*스크롤바의 색상*/
+    opacity: 0.6;
+    border-radius: 10%;
+    /*background-clip: padding-box;*/
+    /*border: 4px solid transparent;*/
+    /*border-top-left-radius: 50px;*/
+    /*border-bottom-right-radius: 50px;*/
+}
+
+.celebration-card::-webkit-scrollbar-track {
+    /*background-color: grey; !*스크롤바 트랙 색상*!*/
+    opacity: 1;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+pre {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+button {
+    background: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background-image: url("/asset/img/white-logo.svg");
+    cursor: pointer;
+}
+
+.menu, .sidebar-on-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.sidebar-on-btn {
+    position: relative;
+    color: white;
+    padding: 0 16px;
+    height: 34px;
+    border: 1px solid white;
+    cursor: pointer;
+
+    transition: .25s;
+    overflow: hidden;
+}
+
+.menu-item {
+    position: relative;
+    font-size: 0.938rem;
+    color: white;
+    margin-left: 40px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.menu-item:after {
+    content: ' ';
+    position: absolute;
+    width: 1.25rem;
+    height: 2px;
+    background-color: #c0ad9a;
+    bottom: -0.4rem;
+    left: 50%;
+    opacity: .5;
+    transform: translateX(-50%) scaleX(1);
+    transition: inherit;
+}
+
+.menu-item:not(:hover):after {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0);
+}
+
+.sidebar-check:checked + .sidebar {
+    display: block;
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform .25s, visibility 0s 0s;
+}
+
+.sidebar {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: #C0AD9A;
+    transform: translateX(100%);
+    transition: transform .25s, visibility 0s .25s;;
+    z-index: 999;
+    padding: 0 40px;
+}
+
+.sidebar-off-btn {
+    display: block;
+    width: 100%;
+    height: 88px;
+    background-image: url("/asset/img/cancel.svg");
+    background-size: 34px 34px;
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+
+.sidebar-item {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.sidebar-item:hover {
+    color: #333;
+}
+
+.section-content {
+    display: flex;
+}
+
+.banner {
+    width: 100%;
+    height: 56.25vw;
+}
+
+.sub-banner {
+    width: 100%;
+    height: 570px;
+}
+
+.banner-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1b1e21;
+    width: 100vw;
+    height: 56.25vw;
+    z-index: -1;
+}
+
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 56.25vw;
+    z-index: -1;
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(0,0,0,0.52);
+}
+
+.banner-img.school {
+    background-image: url("/asset/img/school-banner.jpg");
+}
+
+.banner-img.history {
+    background-image: url("/asset/img/history-banner.png");
+}
+
+.banner-img.gallery {
+    background-image: url("/asset/img/gallery-banner.png");
+}
+
+.banner-img.detail {
+    background-image: url("/asset/img/club-banner.png");
+}
+
+.banner-img.lecture {
+    background-image: url("/asset/img/graduate-banner.png");
+}
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 56.25vw;
+    background-color: rgba(0,0,0,0.52);
+}
+
+.banner-subtitle {
+    font-size: 0.938rem;
+    color: white;
+    margin: 30px 0 50px 0;
+    width: 300px;
+    line-height: 28px;
+    letter-spacing: -0.0417em;
+    z-index: 1;
+}
+
+.banner-title {
+    z-index: 1;
+}
+
+#particles-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+}
+
+.particles canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.938rem;
+    padding: 0 16px;
+    width: 76px;
+    height: 36px;
+    border: 1px solid white;
+    cursor: pointer;
+
+    transition: .25s;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-club {
+    width: 116px;
+    height: 42px;
+    margin-top: 20px;
+}
+
+.cta:before, .sidebar-on-btn:before {
+    content: ' ';
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    right: 110%;
+    z-index: 0;
+    transform: skewX(-15deg) scaleX(0.2);
+    background-color: white;
+    transition: inherit;
+}
+
+.cta:hover, .sidebar-on-btn:hover {
+    color: #333;
+}
+
+.cta:hover:before, .sidebar-on-btn:hover:before {
+    right: -25%;
+    transform: skewX(-15deg) scaleX(1);
+}
+
+.cta > span, .sidebar-on-btn > span {
+    z-index: 1;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background-color: #C0AD9A;
+}
+
+.underline-dark::after {
+    background-color: #8B7A69;
+}
+
+.section-header {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-header.left {
+    align-items: flex-start;
+}
+
+.section-header h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Noto Serif', serif;
+    position: relative;
+    color: #727272;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.section-header.left h1 {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.section-header h1.underline:after {
+    width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.250rem;
+    color: #322F31;
+}
+
+.section-title strong {
+    position: relative;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.section-title strong:after {
+    height: 8px;
+    bottom: 4px;
+    z-index: -1;
+    transition: 0.25s;
+}
+
+.section-title strong:hover:after {
+    height: 66%;
+}
+
+.section-header.left .section-title {
+    margin-bottom: 10px;
+}
+
+.section-header.left h1.underline:after {
+    width: 80px;
+    left: 0;
+    transform: translateX(0);
+}
+
+.section-description {
+    font-size: 1.063rem;
+    color: #585453;
+    line-height: 30px;
+}
+
+@keyframes ani-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ani-in {
+    opacity: 0;
+}
+
+.ani-in.active {
+    animation: ani-in 1s 150ms forwards;
+}
+
+.card, .introduce-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.introduce-card {
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 60px;
+    transition: .25s;
+}
+
+.introduce-card:hover {
+    transform: translateY(-10px);
+    transition: .25s;
+    box-shadow: 0 0 0 10px #fff, 0 20px 50px rgb(0 0 0 / 25%);
+}
+
+.card-info {
+    position: absolute;
+    padding: 30px;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(35, 36, 38, .4), rgba(35, 36, 38, .8));
+}
+
+.card-title, .card-description {
+    color: #FFF;
+    font-weight: 400;
+}
+
+.card-title {
+    margin-bottom: 15px;
+    font-size: 2.250rem;
+}
+
+.card-description {
+    opacity: .75;
+    font-size: 1.250rem;
+}
+
+.card-img {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+.introduce-card-1 .card .card-img {
+    /*background-image: url("/asset/img/test1.jpg");*/
+    background-image: url("/asset/img/card/introduce-picture.png");
+}
+
+.introduce-card-2 .card .card-img {
+    /*background-image: url("/asset/img/test2.jpg");*/
+    background-image: url("/asset/img/card/introduce-picture2.png");
+}
+
+.introduce-card-3 .card .card-img {
+    /*background-image: url("/asset/img/test3.jpg");*/
+    background-image: url("/asset/img/card/lecture.png");
+}
+
+.introduce-card-4 .card .card-img {
+    /*background-image: url("/asset/img/test4.jpg");*/
+    background-image: url("/asset/img/card/work.png");
+}
+
+.card-img {
+    transition: .75s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-img-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #322f31;
+    opacity: 0;
+    transition: .75s;
+}
+
+.introduce-card:hover .card-img-filter {
+    opacity: .75;
+}
+
+.club-card-list {
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.club-card {
+    padding-bottom: 150%;
+    transition: .25s;
+}
+
+.card-info, .club-card {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.club-state {
+    margin: 60px auto 130px;
+}
+
+.club-state-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.club-state-item {
+    cursor: pointer;
+    width: 40px;
+    height: 5px;
+    background: #C4C4C4;
+    margin-right: 15px;
+    transition: .25s;
+}
+
+.club-card:not(.active) {
+    transform: scale(0.8);
+}
+
+.club-state-item.active {
+    background: #C0AD9A;
+}
+
+.club-state-item:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.event-img {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.celebration {
+    background-color: #C0AD9A;
+    padding: 130px 0;
+}
+
+.celebration-title {
+    color: white;
+    font-size: 2.250rem;
+    font-weight: bold;
+}
+
+.celebration-card-list {
+    padding: 30px 0;
+}
+
+.celebration-card {
+    background-color: white;
+    height: 0;
+    /*padding: 40px 40px 75% 40px;*/
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    overflow-y: overlay;
+
+    transition: .25s;
+}
+
+.celebration-card:hover {
+    box-shadow: 0 20px 50px rgb(0 0 0 / 25%);
+}
+
+.celebration-card .card-name {
+    color: #191C1F;
+    font-size: 1.250rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.celebration-card .card-sub {
+    font-size: 0.938rem;
+    color: #777;
+    margin-bottom: 20px;
+    letter-spacing: 0.142857px;
+}
+
+.celebration-card .card-description {
+    font-size: 1rem;
+    opacity: 1;
+    color: #000;
+}
+
+.cta-black {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #29191A;
+    font-size: 0.875rem;
+    padding: 20px 60px;
+    border: 1px solid #29191A;
+    cursor: pointer;
+
+    transition: .25s;
+    overflow: hidden;
+}
+
+.cta-black:before {
+    content: ' ';
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    right: 110%;
+    z-index: 0;
+    transform: skewX(-15deg) scaleX(0.2);
+    background-color: #29191A;
+    transition: inherit;
+}
+
+.cta-black:hover {
+    color: #fff;
+}
+
+.cta-black:hover:before {
+    right: -25%;
+    transform: skewX(-15deg) scaleX(1);
+}
+
+.cta-black > span {
+    z-index: 1;
+}
+
+.celebration-form {
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 88px;
+    background-color: #262626;
+    font-size: 16px;
+    color: white;
+    padding: 13px 30px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.comment {
+    width: 100%;
+    background-color: #C0AD9A;
+    padding: 100px 0;
+}
+
+.form-controller {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.063rem;
+    font-weight: 400;
+}
+
+input.form-controller {
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+textarea.form-controller {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.youtube {
+    width: 100%;
+    height: 56.25vw;
+}
+
+.youtube-section {
+    margin: 100px 0;
+}
+
+@media (min-width: 360px) {
+    .header {
+        height: 88px;
+    }
+
+    .banner, .banner-video, .sub-banner, .banner-img, .banner-background, #particles-dots {
+        width: 100%;
+        height: 522px;
+    }
+
+    .logo {
+        background-size: 50px 50px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .banner-content {
+        margin: 0;
+    }
+
+    .banner-title {
+        max-width: 310px;
+        width: 100%;
+        /*width: 467px;*/
+        font-size: 2.250rem;
+        font-weight: 500;
+        color: white;
+        line-height: 52px;
+        letter-spacing: -0.0417em;
+    }
+
+    .sub-banner .banner-title {
+        max-width: initial;
+        text-align: center;
+    }
+
+    .sidebar-on-btn {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .introduce, .club {
+        margin-top: 100px;
+    }
+
+    .celebration-card {
+        height: 240px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 146px;
+    }
+
+    .banner, .banner-video, .banner-img, .banner-background, #particles-dots {
+        width: 100%;
+        height: 100vw;
+    }
+
+    .sub-banner .banner-img, .sub-banner .banner-background {
+        width: 100%;
+        height: 522px;
+    }
+
+    .logo {
+        background-size: 74px 74px;
+        width: 74px;
+        height: 74px;
+    }
+
+    .banner-content {
+        margin: 0;
+    }
+
+    .banner-title {
+        max-width: 467px;
+        width: 100%;
+        font-size: 3.125rem;
+        font-weight: 500;
+        color: white;
+        line-height: 73px;
+        letter-spacing: -0.0417em;
+    }
+
+    .sub-banner .banner-title {
+        max-width: initial;
+        text-align: center;
+    }
+
+    .sidebar-on-btn {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .introduce, .club {
+        margin-top: 130px;
+    }
+
+    .celebration-card {
+        height: 301px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        height: 150px;
+    }
+
+
+    .banner, .banner-video, .banner-img, .banner-background, #particles-dots {
+        width: 100%;
+        height: 61.8333vw;
+    }
+
+    .sub-banner, .sub-banner .banner-img, .sub-banner .banner-background {
+        width: 100%;
+        height: 570px;
+    }
+
+    .logo {
+        background-size: 70px 70px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .banner-content {
+        margin-left: 130px;
+        margin-right: 130px;
+    }
+
+    .banner-title {
+        max-width: 554px;
+        width: 100%;
+        font-size: 3.75rem;
+        font-weight: 500;
+        color: white;
+        line-height: 83px;
+        letter-spacing: -0.0417em;
+    }
+
+    .sub-banner .banner-title {
+        max-width: initial;
+        text-align: center;
+    }
+
+    .sidebar-on-btn {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .introduce, .club {
+        margin-top: 130px;
+    }
+
+    .celebration-card {
+        height: 317px;
+    }
+}
+
+@media (min-width: 1320px) {
+    .banner, .banner-video, .banner-img, .banner-background, #particles-dots {
+        width: 100%;
+        height: 56.25vw;
+    }
+
+    .sub-banner, .sub-banner .banner-img, .sub-banner .banner-background {
+        width: 100%;
+        height: 570px;
+    }
+}
