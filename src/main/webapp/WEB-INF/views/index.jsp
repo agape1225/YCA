@@ -18,7 +18,7 @@ main page
 <input type="text" id="videoId">
 
 <!--<button onclick="loadClient()">load</button>-->
-<button onclick="execute()">execute</button>
+<button onclick="loadClient()">execute</button>
 
 </body>
 

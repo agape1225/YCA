@@ -7,13 +7,13 @@
 function loadClient() {
     gapi.client.setApiKey("AIzaSyBJdrY6J-S6nq_Gy6oV1LSc8YMdvOgUuWQ");
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
+        .then(function() { execute(); },
             function(err) { console.error("Error loading GAPI client for API", err); });
 }
 // Make sure the client is loaded before calling this method.
 function execute() {
 
-    loadClient();
+    //loadClient();
 
     const videoId = document.getElementById('videoId').value;
 
@@ -36,7 +36,7 @@ function execute() {
                 }
 
                 console.log("Response",comments);
-                //console.log("Response", response.result.items);
+
             },
             function(err) { console.error("Execute error", err); });
 }
