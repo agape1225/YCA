@@ -40,4 +40,13 @@ function execute() {
             },
             function(err) { console.error("Execute error", err); });
 }
+
+function string_conversion(comments){
+
+    for(const elements of comments){
+            
+    }
+
+}
+
 gapi.load("client");
