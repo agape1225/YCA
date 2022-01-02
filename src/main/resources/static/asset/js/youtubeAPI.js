@@ -4,7 +4,14 @@
  * https://developers.google.com/explorer-help/guides/code_samples#javascript
  */
 
-import { string_conversion } from './string-utility.js';
+function string_conversion(comments){
+
+    console.log("Response",comments)
+    /*for(const elements of comments){
+
+    }*/
+
+}
 
 function loadClient() {
     gapi.client.setApiKey("AIzaSyBJdrY6J-S6nq_Gy6oV1LSc8YMdvOgUuWQ");
