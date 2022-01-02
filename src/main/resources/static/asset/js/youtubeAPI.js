@@ -4,6 +4,8 @@
  * https://developers.google.com/explorer-help/guides/code_samples#javascript
  */
 
+import { string_conversion } from './string-utility.js';
+
 function loadClient() {
     gapi.client.setApiKey("AIzaSyBJdrY6J-S6nq_Gy6oV1LSc8YMdvOgUuWQ");
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
@@ -30,23 +32,16 @@ function execute() {
                 const comments = [];
                 var body = response.result.items;
 
-                for(idx in body){
+                for(var idx in body){
                     var commentText = body[idx].snippet.topLevelComment.snippet.textOriginal;
                     comments.push(commentText);
                 }
 
-                console.log("Response",comments);
+                string_conversion(comments);
+                //console.log("Response",comments);
 
             },
             function(err) { console.error("Execute error", err); });
-}
-
-function string_conversion(comments){
-
-    for(const elements of comments){
-            
-    }
-
 }
 
 gapi.load("client");
