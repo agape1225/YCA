@@ -14,7 +14,7 @@ function string_conversion(comments){
 }
 
 function loadClient() {
-    gapi.client.setApiKey("AIzaSyBJdrY6J-S6nq_Gy6oV1LSc8YMdvOgUuWQ");
+    
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
         .then(function() { execute(); },
             function(err) { console.error("Error loading GAPI client for API", err); });
